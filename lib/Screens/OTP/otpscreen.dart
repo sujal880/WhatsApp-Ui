@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_series/Screens/Profile/profilescreen.dart';
 import 'package:whatsapp_series/Widgets/uihelper.dart';
 
 class OTPScreen extends StatelessWidget {
@@ -17,15 +18,15 @@ class OTPScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 80,
             ),
             UiHelper.CustomText(
                 text: "Verifying your number",
                 height: 20,
-                color: Color(0XFF00A884),
+                color: const Color(0XFF00A884),
                 fontweight: FontWeight.bold),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             UiHelper.CustomText(
@@ -44,51 +45,53 @@ class OTPScreen extends StatelessWidget {
                   child: UiHelper.CustomText(
                       text: "Wrong number?",
                       height: 15,
-                      color: Color(0XFF00A884)),
+                      color: const Color(0XFF00A884)),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 UiHelper.CustomContainer(otp1Controller),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 UiHelper.CustomContainer(otp2Controller),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 UiHelper.CustomContainer(otp3Controller),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 UiHelper.CustomContainer(otp4Controller),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 UiHelper.CustomContainer(otp5Controller),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 UiHelper.CustomContainer(otp6Controller)
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             UiHelper.CustomText(
                 text: "Didn’t receive code?",
                 height: 14,
-                color: Color(0XFF00A884))
+                color: const Color(0XFF00A884))
           ],
         ),
       ),
       floatingActionButton:
-          UiHelper.CustomButton(callback: () {}, buttonname: "Next"),
+          UiHelper.CustomButton(callback: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
+          }, buttonname: "Next"),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
